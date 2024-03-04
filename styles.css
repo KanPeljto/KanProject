@@ -60,8 +60,26 @@ footer {
     text-align: center;
 }
 
-#newsicon{
-    height: 4px;
-    width: 4px;
-    
+#newsicon {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+}
+
+#economyicon {
+    height: 20px;
+    width: 20px;
+    background-color: orange;
+}
+
+#sportsicon {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+}
+
+#entertainmenticon {
+    height: 20px;
+    width: 20px;
+    background-color: blueviolet;
 }
