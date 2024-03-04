@@ -1,6 +1,9 @@
 h1{
     text-align: center;
     text-decoration: underline;
+    padding-bottom: px;
+    border-bottom:solid 3px black;
+
 }
 
 a {
@@ -14,7 +17,7 @@ a {
 
 nav{
     text-align: center;
-    padding: 30px;
+    padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
     color: bisque ;
@@ -22,7 +25,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: 2px solid #000; /* Set a custom outline */
+    outline: 2px solid #000; 
 }
 
 #br_news {
@@ -50,10 +53,12 @@ dt {
     font-size: small;
     font-style: italic;
     text-align: end;
-    padding-bottom: 15px;
+    border-bottom:solid 3px black;
 }
 
 #sport_dt{
     text-align: left;
     font-style: normal;
 }
+
+
