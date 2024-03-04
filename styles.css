@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    font-size: large;
+}
+
+
+
+nav{
+    text-align: center;
+    padding: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: bisque ;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 2px solid #000; /* Set a custom outline */
+}
+
+#br_news {
+    font-weight: bold;
+    padding-top: 15px;
+    background-color: darkred;
+}
+
+#economy {
+    padding-top: 15px;
+    background-color: orange;
+}
+
+#sport {
+    padding-top: 15px;
+    background-color: green;
+}
+
+#entertainment {
+    padding-top: 15px;
+    background-color: blueviolet;
+}
+
+dt {
+    font-size: small;
+    font-style: italic;
+    text-align: end;
+    padding-bottom: 15px;
+}
+
+#sport_dt{
+    text-align: left;
+    font-style: normal;
+}
