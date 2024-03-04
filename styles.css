@@ -1,64 +1,67 @@
-h1{
-    text-align: center;
-    text-decoration: underline;
-    padding-bottom: px;
-    border-bottom:solid 3px black;
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-    text-decoration: none;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: whitesmoke;
     color: black;
-    text-decoration: underline;
-    font-size: large;
-}
-
-
-
-nav{
+    padding: 10px 0;
     text-align: center;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: bisque ;
-    padding-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    outline: 2px solid #000; 
-}
-
-#br_news {
-    font-weight: bold;
-    padding-top: 15px;
-    background-color: darkred;
-}
-
-#economy {
-    padding-top: 15px;
-    background-color: orange;
-}
-
-#sport {
-    padding-top: 15px;
-    background-color: green;
-}
-
-#entertainment {
-    padding-top: 15px;
-    background-color: blueviolet;
-}
-
-dt {
-    font-size: small;
     font-style: italic;
-    text-align: end;
-    border-bottom:solid 3px black;
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+    
 }
 
-#sport_dt{
-    text-align: left;
-    font-style: normal;
+nav {
+    background-color: #444;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
+main {
+    padding: 20px 0;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+article {
+    width: calc(50% - 20px);
+    margin-bottom: 40px;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#newsicon{
+    height: 4px;
+    width: 4px;
+    
+}
