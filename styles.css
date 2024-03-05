@@ -100,12 +100,12 @@ footer {
 }
 
 #sec_article {
-    padding-top: 100px;
+    padding-top: 0;
 }
 
 .news-section {
         display: flex;
-        width: 100%;
+        width: 950px;
         margin: 0 auto;
         flex-direction: row;
         background-color:transparent;
@@ -119,9 +119,8 @@ footer {
 #articles {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    height: 100%;
-    width: 100%;
+    gap: 0px;
+    
 }
 
 #children {
@@ -129,4 +128,28 @@ footer {
     flex-direction: column;
     gap:0px;
     
+}
+
+#col {
+    justify-content: space-between;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.login_tab {
+    color: orange;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    nav a {
+        display: block; 
+        margin: 10px 0; 
+    }
+    
+    .news_article {
+        flex: 0 0 100%; 
+    }
 }
