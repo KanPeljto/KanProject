@@ -88,7 +88,7 @@ footer {
         width: 700px;
         margin: 0 auto;
         outline: 1px solid gray;
-        background-color:;
+        background-color:transparent;
 
         
     
@@ -99,5 +99,34 @@ footer {
     color: black
 }
 
+#sec_article {
+    padding-top: 100px;
+}
 
+.news-section {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: row;
+        background-color:transparent;
+        justify-content: space-between;
 
+        
+    
+
+}
+
+#articles {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+#children {
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+    
+}
