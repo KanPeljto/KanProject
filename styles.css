@@ -201,8 +201,6 @@ a:hover{
 }
 
 button{
-   
-    margin-left: 200px;
     background-color: darkgray;
     color: white;
 
@@ -223,4 +221,29 @@ button:hover{
 .article-related-sidebar a:hover {
     text-decoration: underline;
     font-weight: bold;
+}
+
+.tags {
+    background-color: darkgray;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 5px 10px; 
+    border-radius: 10px;
+    color: whitesmoke;
+    margin-right: 10px;
+    
+}
+
+
+/* #tag-container {
+    display: inline-block;
+    justify-content: left;
+    box-sizing: border-box;
+    
+} */
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
 }
