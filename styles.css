@@ -195,5 +195,21 @@ a:hover{
 
 .view-comments {
     width: 300px;
-    height: 400px;
+    height: 50px;
+    text-align: center;
+
 }
+
+button{
+   
+    margin-left: 200px;
+    background-color: darkgray;
+    color: white;
+
+}
+
+button:hover{
+    text-decoration: underline;
+    outline: solid 1px black;
+}
+
