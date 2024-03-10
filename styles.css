@@ -338,3 +338,10 @@ button:hover{
 #login_tab_economy {
     font-weight: bold;
 }
+
+#sports_nav {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
