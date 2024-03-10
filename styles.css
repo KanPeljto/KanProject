@@ -325,3 +325,16 @@ button:hover{
     margin-right: 100px;
     margin-bottom: 40px;
 }
+
+
+#economy_nav {
+    background-color: darkorange;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+#login_tab_economy {
+    font-weight: bold;
+}
