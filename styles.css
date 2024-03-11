@@ -345,3 +345,9 @@ button:hover{
     padding: 10px 0;
     text-align: center;
 }
+
+#no-background-sidebar {
+    background: transparent;
+    outline: none;
+}
+
