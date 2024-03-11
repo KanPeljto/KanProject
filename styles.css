@@ -351,3 +351,9 @@ button:hover{
     outline: none;
 }
 
+#entertainment_nav {
+    background-color: blueviolet;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
