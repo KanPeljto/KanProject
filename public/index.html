@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanco</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <script   src="https://code.jquery.com/jquery-3.7.1.js"   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="   crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="AppContainer">
+        <script type="text/javascript" charset="utf-8">
+            var HashChange= function(){
+                var hash=window.location.hash;
+                if(hash.startsWith("#/")){
+                    hash=hash.replace("#/","");
+                    var file="src/"+hash+".html";
+                    $("#AppContainer").load(file);
+                } else{
+                    window.location="#/home";
+                }
+            }
+            window.onhashchange=HashChange
+            HashChange();
+        </script>
+    </div>
+
     <header>
         <div class="container">
             <h1>Kanco Daily News</h1>
@@ -16,11 +35,11 @@
 
     <nav>
         <div class="container">
-            <a href="news.html">News</a> |
-            <a href="#">Economy</a> |
-            <a href="#">Sports</a> |
-            <a href="#">Entertainment</a> |
-            <a class="login_tab " href="#">Sign Up / Login</a> 
+            <a href="#/news.html">News</a> |
+            <a href="economy.html">Economy</a> |
+            <a href="sports.html">Sports</a> |
+            <a href="entertainment.html">Entertainment</a> |
+            <a class="login_tab " href="login.html">Sign Up / Login</a> 
         </div>
     </nav>
 
