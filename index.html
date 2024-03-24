@@ -16,11 +16,11 @@
 
     <nav>
         <div class="container">
-            <a href="news.html">News</a> |
-            <a href="#">Economy</a> |
-            <a href="#">Sports</a> |
-            <a href="#">Entertainment</a> |
-            <a class="login_tab " href="#">Sign Up / Login</a> 
+            <a id="news-link">News</a> |
+            <a id="economy-link">Economy</a> |
+            <a id="sports-link">Sports</a> |
+            <a id="entertainment-link">Entertainment</a> |
+            <a class="login_tab " id="login-link">Sign Up / Login</a> 
         </div>
     </nav>
 
@@ -57,5 +57,81 @@
             <p>&copy; 2024 Kanco Daily News</p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    $("#news-link").click(function(event) {
+        event.preventDefault();
+        $.get("news.html", function(data) {
+            $('body').html(data);
+            app.route({
+                load: 'news.html'
+            });
+        });
+    });
+});
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#economy-link").click(function(event) {
+            event.preventDefault();
+            $.get("economy.html", function(data) {
+                $('body').html(data);
+                app.route({
+                    load: 'economy.html'
+                });
+            });
+        });
+    });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $("#sports-link").click(function(event) {
+            event.preventDefault();
+            $.get("sports.html", function(data) {
+                $('body').html(data);
+                app.route({
+                    load: 'sports.html'
+                });
+            });
+        });
+    });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $("#entertainment-link").click(function(event) {
+            event.preventDefault();
+            $.get("entertainment.html", function(data) {
+                $('body').html(data);
+                app.route({
+                    load: 'entertainment.html'
+                });
+            });
+        });
+    });
+    </script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#login-link").click(function(event) {
+            event.preventDefault();
+            $.get("login.html", function(data) {
+                $('body').html(data);
+                app.route({
+                    load: 'login.html'
+                });
+            });
+        });
+    });
+    </script>
+
+
+
+
 </body>
 </html>
