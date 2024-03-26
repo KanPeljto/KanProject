@@ -65,9 +65,6 @@ $(document).ready(function(){
         event.preventDefault();
         $.get("news.html", function(data) {
             $('body').html(data);
-            app.route({
-                load: 'news.html'
-            });
         });
     });
 });
@@ -79,9 +76,6 @@ $(document).ready(function(){
             event.preventDefault();
             $.get("economy.html", function(data) {
                 $('body').html(data);
-                app.route({
-                    load: 'economy.html'
-                });
             });
         });
     });
@@ -93,9 +87,7 @@ $(document).ready(function(){
             event.preventDefault();
             $.get("sports.html", function(data) {
                 $('body').html(data);
-                app.route({
-                    load: 'sports.html'
-                });
+                
             });
         });
     });
@@ -107,9 +99,7 @@ $(document).ready(function(){
             event.preventDefault();
             $.get("entertainment.html", function(data) {
                 $('body').html(data);
-                app.route({
-                    load: 'entertainment.html'
-                });
+               
             });
         });
     });
@@ -122,9 +112,7 @@ $(document).ready(function(){
             event.preventDefault();
             $.get("login.html", function(data) {
                 $('body').html(data);
-                app.route({
-                    load: 'login.html'
-                });
+               
             });
         });
     });

@@ -183,12 +183,13 @@ a:hover{
 }
 
 .article-related-sidebar {
-    margin-top: 100px;
+    margin-top: 20px; 
     margin-left: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     background-color: lightgray;
     outline: 1px solid gray;
+    width: 300px; 
 }
 
 .article-related-sidebar img {
@@ -213,11 +214,11 @@ button:hover{
     outline: solid 1px black;
 }
 
-.article-related-sidebar a{
+.article-related-sidebar a {
     text-decoration: none;
     color: black;
     font-family: 'Times New Roman', Times, serif;
-
+    display: block; /* Ensure links take full width of sidebar */
 }
 
 .article-related-sidebar a:hover {
@@ -358,4 +359,9 @@ button:hover{
     text-align: center;
 }
 
+
+.article {
+    display: flex;
+
+}
 
