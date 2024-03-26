@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,16 +46,11 @@
 
 
                 <div class="article-related-sidebar">
-
                     <h3>Related</h3>
-                    <a href="2-wounded-1-in-danger.html">
-                    <img src="/images/saobracajna nesreca.jpeg" alt="Police on the scene" height="200px" width="270px">
-                       <h4>Two injured in a car crash related shooting</h4>
-                       </a>
-                    <a href="witnesses-page.html">
-                        <img src="/images/witness.jpeg" alt="" height="200px" width="270px">
-                        <h4>Witnesses called to testify in ongoing investigation</h4>
-                    </a>
+                    
+                    <div id="related-articles">
+                        
+                    </div>
                 </div>
                     
             </div>
@@ -81,6 +77,42 @@
                     <p>&copy; 2024 Kanco Daily News</p>
                 </div>
             </footer>     
+
+
+
+            <!-- AJAX calls for related articles -->
+
+            <script>
+                $(document).ready(function() {
+            $.ajax({
+                url: 'data.json',
+                dataType: 'json',
+                success: function(data) {
+                    var articles = data.articles;
+                    var specificIds = [3, 2];
+                    var relatedArticlesHtml = '';
+        
+                    var filteredArticles = articles.filter(function(article) {
+                        return specificIds.includes(article.id);
+                    });
+        
+                   
+                    filteredArticles.forEach(function(article) {
+                        relatedArticlesHtml += '<a id="' + article.linkID + '" class="related-article">';
+                        relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="200px" width="270px">';
+                        relatedArticlesHtml += '<h4>' + article.title + '</h4>';
+                        relatedArticlesHtml += '</a>';
+                    });
+        
+                    $('#related-articles').html(relatedArticlesHtml);
+                },
+                error: function(xhr, status, error) {
+                    console.error(status, error);
+                }
+            });
+        });
+        
+            </script>
 
 
             <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
@@ -142,6 +174,33 @@
                     });
                 });
                 </script>
+
+
+<!-- Related articles SPAPP -->
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-2", function(event) {
+            event.preventDefault();
+            $.get("witnesses-page.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-main", function(event) {
+            event.preventDefault();
+            $.get("article-page.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+
 
 </body>
 </html>

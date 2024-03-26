@@ -21,10 +21,11 @@
 
         {
             "id":3,
-            "title": "From the crime scene: Two wounded, one in gravely danger AJAX TEST",
-            "date": "March 20th, 2024",
+            "title": "Two injured in car crash gunfight",
+            "date": "March 19th, 2024",
             "categories":["shooting","car crash"],
-            "image":"/images/ambulance"
+            "image":"/images/saobracajna nesreca.jpeg",
+            "linkID":"related-article-link-main"
         }
     ]
 }
