@@ -5,8 +5,9 @@
             "title": "From the crime scene: Two wounded, one in gravely danger",
             "date": "March 20th, 2024",
             "categories":["shooting","car crash"],
-            "image":"/images/ambulance",
-            "href":"2-wounded-1-in-danger.html"
+            "image":"/images/ambulance.webp",
+            "linkID":"related-article-link-1"
+            
         },
 
         {
@@ -14,8 +15,8 @@
             "title": "Witnesses called to testify in ongoing investigation",
             "date": "March 21th, 2024",
             "categories":["shooting","car crash"],
-            "image":"/images/witness",
-            "href":"witnesses-page.html"
+            "image":"/images/witness.jpeg",
+            "linkID":"related-article-link-2"
         },
 
         {

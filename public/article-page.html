@@ -72,6 +72,8 @@
         </div>
     </footer>
 
+    <!-- AJAX calls for related articles -->
+
     <script>
         $(document).ready(function() {
     $.ajax({
@@ -88,8 +90,8 @@
 
            
             filteredArticles.forEach(function(article) {
-                relatedArticlesHtml += '<a href="' + article.href + '" class="related-article">';
-                relatedArticlesHtml += '<img src="' + article.image + 'alt="' + article.title + '" height="200px" width="270px">';
+                relatedArticlesHtml += '<a id="' + article.linkID + '" class="related-article">';
+                relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="200px" width="270px">';
                 relatedArticlesHtml += '<h4>' + article.title + '</h4>';
                 relatedArticlesHtml += '</a>';
             });
@@ -103,6 +105,9 @@
 });
 
     </script>
+
+
+<!-- SPAPP for navbar -->
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
             <script>
@@ -163,6 +168,33 @@
                     });
                 });
                 </script>
+
+
+
+<!-- SPAPP for related articles -->
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-1", function(event) {
+            event.preventDefault();
+            $.get("2-wounded-1-in-danger.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-2", function(event) {
+            event.preventDefault();
+            $.get("witnesses-page.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+                
     
 </body>
 </html>
