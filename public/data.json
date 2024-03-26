@@ -2,7 +2,7 @@
     "articles":[
         {
             "id":1,
-            "title": "From the crime scene: Two wounded, one in gravely danger AJAX TEST",
+            "title": "From the crime scene: Two wounded, one in gravely danger",
             "date": "March 20th, 2024",
             "categories":["shooting","car crash"],
             "image":"/images/ambulance",
@@ -11,10 +11,11 @@
 
         {
             "id":2,
-            "title": "From the crime scene: Two wounded, one in gravely danger AJAX TEST",
-            "date": "March 20th, 2024",
+            "title": "Witnesses called to testify in ongoing investigation",
+            "date": "March 21th, 2024",
             "categories":["shooting","car crash"],
-            "image":"/images/ambulance"
+            "image":"/images/witness",
+            "href":"witnesses-page.html"
         },
 
         {
