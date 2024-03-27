@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +18,11 @@
         <main class="container">
             <nav id="news_nav">
                 <div class="container">
-                    <a href="index.html">Home</a>
-                    <a href="news.html">News</a> |
-                    <a href="#">Economy</a> |
-                    <a href="#">Sports</a> |
-                    <a href="#">Entertainment</a>
-                    <a class="login_tab " href="#">Sign Up / Login</a> 
+                    <a id="news-link">News</a> |
+                    <a id="economy-link">Economy</a> |
+                    <a id="sports-link">Sports</a> |
+                    <a id="entertainment-link">Entertainment</a> |
+                    <a class="login_tab " id="login-link">Sign Up / Login</a> 
                 </div>
             </nav>
 
@@ -42,10 +42,7 @@
 
                     <div id="related-article-2-container">
                         <article id="related-article-2">
-                            <h5>Related article:</h5>
-                            <h3>Haley exits race, creating a Biden-Trump rematch</h3>
-                            <img src="/images/haley.jpeg" class="small-article-image-2">
-                            <h4>As his last major rival drops out, Trump becomes the presumptive Republican nominee, setting up a November showdown with Biden</h4>
+                            
                         </article>
 
                         <p id="text-horizontal">
@@ -72,11 +69,8 @@
                             What that means is that the impact of the decision will sweep far wider than the controversy at issue in Colorado. It means that any state would be overstepping its power by trying to knock Trump off the ballot – a position that will almost certainly shut down similar “insurrectionist” lawsuits across the country. <br> <br>
 
                             In that sense, the court’s opinion was a significant victory for Trump, vanquishing a legal theory that has for months threatened his viability for a second term.</p>
-                            <article id="related-article-2">
-                                <h5>Related article:</h5>
-                                <h3>Trump vs Biden elections</h3>
-                                <img src="/images/trumpbiden.jpeg" class="small-article-image-2">
-                                <h4>The general election is here and it’s Trump vs. Biden</h4>
+                            <article id="related-article-3">
+                                
                             </article>
 
                             
@@ -118,7 +112,161 @@
                 <div class="container">
                     <p>&copy; 2024 Kanco Daily News</p>
                 </div>
-            </footer>     
+            </footer>    
+            
+            
+
+            <script>
+                $(document).ready(function(){
+                    $("#news-link").click(function(event) {
+                        event.preventDefault();
+                        $.get("news.html", function(data) {
+                            $('body').html(data);
+                        });
+                    });
+                });
+                </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#economy-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("economy.html", function(data) {
+                                $('body').html(data);
+                            });
+                        });
+                    });
+                    </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#sports-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("sports.html", function(data) {
+                                $('body').html(data);
+                                
+                            });
+                        });
+                    });
+                    </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#entertainment-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("entertainment.html", function(data) {
+                                $('body').html(data);
+                               
+                            });
+                        });
+                    });
+                    </script>
+                
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#login-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("login.html", function(data) {
+                                $('body').html(data);
+                               
+                            });
+                        });
+                    });
+                    </script>    
+
+
+
+<!-- AJAX calls for related articles -->
+
+<script>
+    $(document).ready(function() {
+$.ajax({
+    url: 'data.json',
+    dataType: 'json',
+    success: function(data) {
+        var articles = data['articles-2'];
+        var specificIds = [1];
+        var relatedArticlesHtml = '';
+
+        var filteredArticles = articles.filter(function(article) {
+            return specificIds.includes(article.id);
+        });
+
+       
+        filteredArticles.forEach(function(article) {
+            relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkID +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="470px" width="570px">';
+            relatedArticlesHtml += '<h4>' + article.content + '</h4>';
+            relatedArticlesHtml += '</a>';
+        });
+
+        $('#related-article-2').html(relatedArticlesHtml);
+    },
+    error: function(xhr, status, error) {
+        console.error(status, error);
+    }
+});
+});
+
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-1", function(event) {
+            event.preventDefault();
+            $.get("haley.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+$.ajax({
+    url: 'data.json',
+    dataType: 'json',
+    success: function(data) {
+        var articles = data['articles-2'];
+        var specificIds = [2];
+        var relatedArticlesHtml = '';
+
+        var filteredArticles = articles.filter(function(article) {
+            return specificIds.includes(article.id);
+        });
+
+       
+        filteredArticles.forEach(function(article) {
+            relatedArticlesHtml += '<a id="' + 'related-article-3' + '" class="'+ article.linkID +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="470px" width="570px">';
+            relatedArticlesHtml += '<h4>' + article.content + '</h4>';
+            relatedArticlesHtml += '</a>';
+        });
+
+        $('#related-article-3').html(relatedArticlesHtml);
+    },
+    error: function(xhr, status, error) {
+        console.error(status, error);
+    }
+});
+});
+
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-2", function(event) {
+            event.preventDefault();
+            $.get("trump-biden.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 

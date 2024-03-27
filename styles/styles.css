@@ -314,6 +314,10 @@ button:hover{
     outline: solid 1px lightgray;
 }
 
+#related-article-3 {
+    outline: solid 1px lightgray;
+}
+
 #text-horizontal-right {
     margin-top: 50px;
     margin-right: 20px;
