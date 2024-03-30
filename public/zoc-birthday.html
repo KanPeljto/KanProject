@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +18,12 @@
         <main class="container">
             <nav id="sports_nav">
                 <div class="container">
-                    <a href="index.html">Home</a>
-                    <a href="news.html">News</a> |
-                    <a href="#">Economy</a> |
-                    <a href="#">Sports</a> |
-                    <a href="#">Entertainment</a>
-                    <a class="login_tab " href="#">Sign Up / Login</a> 
-                </div>
+                    <a id="home-link">Home</a>
+                    <a id="news-link">News</a> |
+                    <a id="economy-link">Economy</a> |
+                    <a id="sports-link">Sports</a> |
+                    <a id="entertainment-link">Entertainment</a> |
+                    <a class="login_tab " id="login-link">Sign Up / Login</a>  
             </nav>
 
             <h1>Happy brithday,maestro! Euroleague and Partizan celebrate Zeljko Obradovic's birthday</h1>
@@ -69,16 +69,12 @@
 
 
                 <div class="article-related-sidebar" id="no-background-sidebar">
+                    
 
                     <h3>Related</h3>
-                    <a href="">
-                    <img src="/images/avramovic.jpeg" alt="Aleksa Avramovic talking to the coach on the sideline" height="200px" width="270px">
-                       <h4>Partizan thrived as Aleksa Avramovic fired on all cylinders</h4>
-                       </a>
-                    <a href="">
-                        <img src="/images/milano.webp" alt="" height="200px" width="270px">
-                        <h4>Milan tied a EuroLeague record on night of strange stats</h4>
-                    </a>
+                    <div id="related-articles">
+                   
+                    </div>
                 </div>
                     
             </div>
@@ -104,7 +100,138 @@
                 <div class="container">
                     <p>&copy; 2024 Kanco Daily News</p>
                 </div>
-            </footer>     
+            </footer>    
+            
+            <script>
+                $(document).ready(function(){
+                    $("#news-link").click(function(event) {
+                        event.preventDefault();
+                        $.get("news.html", function(data) {
+                            $('body').html(data);
+                        });
+                    });
+                });
+                </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#economy-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("economy.html", function(data) {
+                                $('body').html(data);
+                            });
+                        });
+                    });
+                    </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#sports-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("sports.html", function(data) {
+                                $('body').html(data);
+                            });
+                        });
+                    });
+                    </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#entertainment-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("entertainment.html", function(data) {
+                                $('body').html(data);
+                            });
+                        });
+                    });
+                    </script>
+                
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#login-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("login.html", function(data) {
+                                $('body').html(data);
+                                
+                            });
+                        });
+                    });
+                    </script>
+                
+                <script>
+                    $(document).ready(function(){
+                        $("#home-link").click(function(event) {
+                            event.preventDefault();
+                            $.get("index.html", function(data) {
+                                $('body').html(data);
+                                
+                            });
+                        });
+                    });
+                    </script>
+
+
+
+<!-- AJAX calls for related articles -->
+
+<script>
+    $(document).ready(function() {
+$.ajax({
+    url: 'data.json',
+    dataType: 'json',
+    success: function(data) {
+        var articles = data['articles-4'];
+        var specificIds = [2,3];
+        var relatedArticlesHtml = '';
+
+        var filteredArticles = articles.filter(function(article) {
+            return specificIds.includes(article.id);
+        });
+
+       
+        filteredArticles.forEach(function(article) {
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="related-article">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="200px" width="270px">';
+            relatedArticlesHtml += '<h4>' + article.title + '</h4>';
+            relatedArticlesHtml += '</a>';
+        });
+
+        $('#related-articles').html(relatedArticlesHtml);
+    },
+    error: function(xhr, status, error) {
+        console.error(status, error);
+    }
+});
+});
+
+</script>
+
+
+<!-- SPAPP for related articles -->
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-6", function(event) {
+            event.preventDefault();
+            $.get("sports-main-article.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-5", function(event) {
+            event.preventDefault();
+            $.get("milan-partizan.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 
