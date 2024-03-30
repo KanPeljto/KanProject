@@ -101,7 +101,7 @@
         "date": "March 7th,2024",
         "categories":["stocks","inflation"],
         "image":"/images/dow.webp",
-        "linkClass":"main_acrticle",
+        "linkClass":"main_article",
         "content":"Stocks took a dive Tuesday after a key inflation report revealed stubborn price increases, raising concerns on Wall Street that the Federal Reserve will keep rates higher for longer than anticipated."
     }
     ],
