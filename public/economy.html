@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,16 +43,20 @@ Stocks took a dive Tuesday after a key inflation report revealed stubborn price 
             
             <div id = 'articles'>
                 <div class="col">
-                    <article class="news_article">
+                    <a href="" class="article_link">
+                    <article id="secondary_article_1" class="news_article">
                         <h3 id="sec_article">The Fed probably won’t cut rates in March. Here’s what that means for markets</h3>
                         <img src="/images/jerome powell.webp" height="350" width="300">
                     </article>
+                    </a>
 
-                    <article>
+                    <a href="" class="article_link">
+                    <article id="secondary_article_2">
                         <h3>Here’s why the Fed cares about the cost of your haircut and doctor’s visit</h3>
                         <img src="/images/haircut.webp">
                         <p>America’s inflation problem has improved greatly in some respects — but it remains stubborn for the price of services.</p>
                     </article>
+                    </a>
                 </div> 
             
             
@@ -146,6 +151,48 @@ $(document).ready(function(){
         });
     });
     </script>
+
+    <!-- SPAPP for articles -->
+
+
+
+<script>
+    $(document).ready(function(){
+        $(".main_article").click(function(event) {
+            event.preventDefault();
+            $.get("economy-main-article.html", function(data) {
+                $('body').html(data);
+                
+            });
+        });
+    });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $("#secondary_article_1").click(function(event) {
+            event.preventDefault();
+            $.get("fed-cuts-march.html", function(data) {
+                $('body').html(data);
+                
+            });
+        });
+    });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $("#secondary_article_2").click(function(event) {
+            event.preventDefault();
+            $.get("fed-cares.html", function(data) {
+                $('body').html(data);
+                
+            });
+        });
+    });
+    </script>
+
+    
     
 </body>
 </html>

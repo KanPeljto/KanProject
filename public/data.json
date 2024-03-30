@@ -62,8 +62,47 @@
             "image_class":"small-article-image-2",
             "content":"The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state",
             "linkID":"related-article-link-3"
+        },
+        {
+            "id":4,
+            "title": "Justices ruled Trump couldn’t be removed from Colorado’s ballot, a sweeping ruling that brushed aside whether he is an insurrectionist",
+            "date": "March 30th,2024",
+            "categories":["trump","biden","elections"],
+            "image":"/images/congress.jpeg",
+            "image_class":"small-article-image-2",
+            "content":"The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state",
+            "linkID":"related-article-link-3"
+        },
+        {
+            "id":5,
+            "title": "Justices ruled Trump couldn’t be removed from Colorado’s ballot, a sweeping ruling that brushed aside whether he is an insurrectionist",
+            "date": "March 30th,2024",
+            "categories":["trump","biden","elections"],
+            "image":"/images/congress.jpeg",
+            "image_class":"small-article-image-2",
+            "content":"The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state",
+            "linkID":"related-article-link-3"
+        },
+        {
+            "id":6,
+            "title": "Justices ruled Trump couldn’t be removed from Colorado’s ballot, a sweeping ruling that brushed aside whether he is an insurrectionist",
+            "date": "March 30th,2024",
+            "categories":["trump","biden","elections"],
+            "image":"/images/congress.jpeg",
+            "image_class":"small-article-image-2",
+            "content":"The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state",
+            "linkID":"related-article-link-3"
         }
-    ]
+    ],
+    "main-articles":{
+        "id":1,
+        "title": "Dow tumbles more than 500 points as hot inflation data stokes fears about higher-for-longer rates",
+        "date": "March 7th,2024",
+        "categories":["stocks","inflation"],
+        "image":"/images/dow.webp",
+        "linkClass":"main_acrticle",
+        "content":"Stocks took a dive Tuesday after a key inflation report revealed stubborn price increases, raising concerns on Wall Street that the Federal Reserve will keep rates higher for longer than anticipated."
+    }
 
 
 }
