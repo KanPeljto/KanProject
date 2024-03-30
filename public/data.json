@@ -43,13 +43,22 @@
         },
 
         {
-            "id":2,
+            "id":3,
             "title": "Trump vs Biden elections",
             "date": "March 24th,2024",
             "categories":["trump","biden","elections"],
             "image":"/images/trumpbiden.jpeg",
             "content":"The general election is here and it’s Trump vs. Biden",
             "linkID":"related-article-link-2"
+        },
+        {
+            "id":2,
+            "title": "Justices ruled Trump couldn’t be removed from Colorado’s ballot, a sweeping ruling that brushed aside whether he is an insurrectionist",
+            "date": "March 30th,2024",
+            "categories":["trump","biden","elections"],
+            "image":"/images/congress.jpeg",
+            "content":"The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state",
+            "linkID":"related-article-link-3"
         }
     ]
 
