@@ -94,7 +94,8 @@
             "linkID":"related-article-link-3"
         }
     ],
-    "main-articles":{
+    "main-articles":[
+        {
         "id":1,
         "title": "Dow tumbles more than 500 points as hot inflation data stokes fears about higher-for-longer rates",
         "date": "March 7th,2024",
@@ -103,6 +104,30 @@
         "linkClass":"main_acrticle",
         "content":"Stocks took a dive Tuesday after a key inflation report revealed stubborn price increases, raising concerns on Wall Street that the Federal Reserve will keep rates higher for longer than anticipated."
     }
+    ],
+    
+    "articles-3":[
+        {
+            "id":1,
+            "title": "The Fed probably won’t cut rates in March. Here’s what that means for markets",
+            "date": "March 5th,2024",
+            "categories":["fed","market"],
+            "image":"/images/jerome powell.webp",
+            "image_class":"small-article-image-2",
+            "content":"The Fed probably won’t cut rates in March. Here’s what that means for markets",
+            "linkID":"related-article-link-3"
+        },
+        {
+            "id":2,
+            "title": "Here’s why the Fed cares about the cost of your haircut and doctor’s visit",
+            "date": "March 6th,2024",
+            "categories":["inflation","market"],
+            "image":"/images/haircut.webp",
+            "image_class":"small-article-image-2",
+            "content":"America’s inflation problem has improved greatly in some respects — but it remains stubborn for the price of services.",
+            "linkID":"related-article-link-3"
+        }
+    ]
 
 
 }
