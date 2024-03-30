@@ -196,7 +196,7 @@ $.ajax({
        
         filteredArticles.forEach(function(article) {
             relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="470px" width="570px">';
+                relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
         });
@@ -241,7 +241,7 @@ $.ajax({
        
         filteredArticles.forEach(function(article) {
             relatedArticlesHtml += '<a id="' + 'related-article-3' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="470px" width="570px">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
         });

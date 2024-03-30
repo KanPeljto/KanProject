@@ -66,10 +66,7 @@
 
                     <div id="related-article-2-container">
                         <article id="related-article-2">
-                            <h5>Related article:</h5>
-                            <h3>Justice ruled out Trump couln't be removed from Colorado's ballot</h3>
-                            <img src="/images/congress.jpeg" class="small-article-image-2">
-                            <h5>The Supreme Court on Monday ruled that former President Donald Trump could not be removed from the ballot in Colorado or any other state – a sweeping and historic ruling that brushed aside a lawsuit claiming that he disqualified himself from office because of his actions on January 6, 2021.</h5>
+                            
                         </article>
 
                         <p id="text-horizontal">
@@ -109,10 +106,7 @@
 
                             "I know Donald Trump's thirsty for attention and struggling to expand his appeal beyond the MAGA base -- and that's a conversation we'll have at the appropriate time in this cycle," Michael Tyler, the campaign’s communications director, said in a statement.</p>
                             <article id="related-article-3">
-                                <h5>Related article:</h5>
-                                <h3>Trump vs Biden elections</h3>
-                                <img src="/images/trumpbiden.jpeg" class="small-article-image-2">
-                                <h4>The general election is here and it’s Trump vs. Biden</h4>
+                                
                             </article>
 
                             
@@ -172,6 +166,17 @@
                     });
                 });
                 </script>
+
+<script>
+    $(document).ready(function(){
+        $("#news-link").click(function(event) {
+            event.preventDefault();
+            $.get("news.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+    </script>
         
             <script>
                 $(document).ready(function(){
@@ -251,7 +256,7 @@ $.ajax({
        
         filteredArticles.forEach(function(article) {
             relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="470px" width="570px">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
         });
@@ -284,7 +289,7 @@ $.ajax({
        
         filteredArticles.forEach(function(article) {
             relatedArticlesHtml += '<a id="' + 'related-article-3' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"  width="570px">';
+            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
         });
