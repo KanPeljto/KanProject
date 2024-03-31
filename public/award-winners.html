@@ -228,6 +228,56 @@
 
 
 
+<!-- AJAX calls articles -->
+
+ <script>
+    $(document).ready(function() {
+$.ajax({
+    url: 'data.json',
+    dataType: 'json',
+    success: function(data) {
+        var articles = data['main-articles'];
+        var specificIds = [3];
+        var relatedArticlesHtml = '';
+
+        var filteredArticles = articles.filter(function(article) {
+            return specificIds.includes(article.id);
+        });
+
+       
+        filteredArticles.forEach(function(article) {
+            relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';                        relatedArticlesHtml += '<h4>' + article.content + '</h4>';
+            relatedArticlesHtml += '</a>';
+        });
+
+        $('#related-article-2').html(relatedArticlesHtml);
+    },
+    error: function(xhr, status, error) {
+        console.error(status, error);
+    }
+});
+});
+</script>
+
+
+<!-- spapp articles -->
+
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".main_article", function(event) {
+            event.preventDefault();
+            $.get("entertainment-main-article.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+
+
+
 </body>
 </html>
 
