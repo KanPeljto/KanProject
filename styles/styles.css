@@ -369,3 +369,26 @@ button:hover{
 
 }
 
+
+#comment-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .comment {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .username {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .comment-text {
+    margin: 5px 0;
+  }
+  
+  
+

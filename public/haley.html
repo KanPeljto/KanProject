@@ -328,6 +328,17 @@ $.ajax({
     });
 </script>
 
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#button-container", function(event) {
+            event.preventDefault();
+            $.get("comments.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 
