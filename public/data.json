@@ -112,6 +112,16 @@
         "image":"/images/avramovic.jpeg",
         "linkClass":"main_article",
         "content":"The home team’s playmaker stood out in an electrifying, high-scoring contest in front of a packed crowd"
+    },
+    {
+        "id":3,
+        "title": "Oscar highlights: ‘Oppenheimer’ wins big, while Ryan Gosling and past winner cameos stole the show",
+        "date": "March 14th,2024",
+        "categories":[],
+        "image":"/images/oscar.jpeg",
+        "linkClass":"main_article",
+        "content":" The Oscar telecast always juggles three major objectives: Honoring the year’s best films and those who made them; broadly celebrating and promoting the movie-going habit; and putting on a good show, both for the bigwigs in the theater and the folks at home.",
+        "linkID":"related-article-link-6"
     }
     ],
     
@@ -171,6 +181,28 @@
         }
 
         
+    ],
+    "articles-5":[
+        {
+            "id":1,
+            "title": "Academy Award winners 2024: See who took home the Oscar",
+            "date": "March 13th,2024",
+            "categories":[""],
+            "image":"/images/oppenheimer.webp",
+            "image_class":"small-article-image-2",
+            "content":"Academy Award winners 2024: See who took home the Oscar",
+            "linkID":"related-article-link-7"
+        },
+        {
+            "id":2,
+            "title": "Oscars 2024: ‘Barbie’ might be the belle of the ball, but it looks like ‘Oppenheimer’s’ night",
+            "date": "March 13th,2024",
+            "categories":[""],
+            "image":"/images/gosling2.webp",
+            "image_class":"small-article-image-2",
+            "content":" Oscars 2024: ‘Barbie’ might be the belle of the ball, but it looks like ‘Oppenheimer’s’ night",
+            "linkID":"related-article-link-8"
+        }
     ]
 
 
