@@ -232,16 +232,15 @@ $(document).ready(function(){
 
 <script>
     $(document).ready(function(){
-        $(".main_article").click(function(event) {
+        $(document).on("click", ".related-article-link-9", function(event) {
             event.preventDefault();
             $.get("entertainment-main-article.html", function(data) {
                 $('body').html(data);
-                
             });
         });
     });
-    </script>
-    </script>
+</script>
+
 
     <script>
         $(document).ready(function(){
