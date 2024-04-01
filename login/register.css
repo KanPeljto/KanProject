@@ -41,7 +41,7 @@ body{
     outline: none;
     border: 2px solid white;
     border-radius: 20px;
-    color: white;
+    color: black;
     padding-left: 20px;
 }
 
@@ -61,7 +61,8 @@ body{
     outline: none;
     border-radius: 20px;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 700;
+    color: black;
 }
 
 .wrapper .register-link {

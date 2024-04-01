@@ -80,7 +80,7 @@
         url: 'data.json',
         dataType: 'json',
         success: function(data) {
-            var articles = data.articles;
+            var articles = data.all_articles;
             var specificIds = [1, 2];
             var relatedArticlesHtml = '';
 
@@ -203,6 +203,16 @@
             $.get("comments.html", function(data) {
                 $('body').html(data);
             });
+        });
+    });
+</script>
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
         });
     });
 </script>

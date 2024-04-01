@@ -206,8 +206,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['main-articles'];
-        var specificIds = [2];
+        var articles = data.all_articles;
+        var specificIds = [8];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -238,8 +238,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-4'];
-        var specificIds = [1];
+        var articles = data.all_articles;
+        var specificIds = [12];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -270,7 +270,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", "#related-article-2", function(event) {
+        $(document).on("click", ".related-article-link-8", function(event) {
             event.preventDefault();
             $.get("sports-main-article.html", function(data) {
                 $('body').html(data);
@@ -281,7 +281,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", "#related-article-3", function(event) {
+        $(document).on("click", ".related-article-link-12", function(event) {
             event.preventDefault();
             $.get("zoc-birthday.html", function(data) {
                 $('body').html(data);
@@ -301,6 +301,17 @@ $.ajax({
         });
     });
 </script>
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
+        });
+    });
+</script>
+
 </body>
 </html>
 

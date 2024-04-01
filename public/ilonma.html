@@ -191,6 +191,16 @@ OpenAI fired back at Elon Musk, who sued the ChatGPT company last week for chasi
     });
 </script>
 
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
+        });
+    });
+</script>
 </body>
 </html>
 

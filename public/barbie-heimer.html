@@ -201,8 +201,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-5'];
-        var specificIds = [1];
+        var articles = data.all_articles;
+        var specificIds = [14];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -231,8 +231,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['main-articles'];
-        var specificIds = [3];
+        var articles = data.all_articles;
+        var specificIds = [9];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -276,6 +276,17 @@ $.ajax({
             $.get("comments.html", function(data) {
                 $('body').html(data);
             });
+        });
+    });
+</script>
+
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
         });
     });
 </script>

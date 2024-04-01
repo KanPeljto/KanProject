@@ -236,8 +236,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['main-articles'];
-        var specificIds = [3];
+        var articles = data.all_articles;
+        var specificIds = [9];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -246,7 +246,7 @@ $.ajax({
 
        
         filteredArticles.forEach(function(article) {
-            relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
             relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';                        relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
         });
@@ -266,7 +266,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".main_article", function(event) {
+        $(document).on("click", "#related-article-link-9", function(event) {
             event.preventDefault();
             $.get("entertainment-main-article.html", function(data) {
                 $('body').html(data);
@@ -286,6 +286,15 @@ $.ajax({
     });
 </script>
 
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
+        });
+    });
+</script>
 
 
 

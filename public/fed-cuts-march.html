@@ -212,8 +212,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['main-articles'];
-        var specificIds = [1];
+        var articles = data.all_articles;
+        var specificIds = [7];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -244,8 +244,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-3'];
-        var specificIds = [2];
+        var articles = data.all_articles;
+        var specificIds = [11];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -275,7 +275,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", "#related-article-2", function(event) {
+        $(document).on("click", ".related-article-link-7", function(event) {
             event.preventDefault();
             $.get("economy-main-article.html", function(data) {
                 $('body').html(data);
@@ -286,7 +286,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".related-article-link-3", function(event) {
+        $(document).on("click", ".related-article-link-11", function(event) {
             event.preventDefault();
             $.get("fed-cares.html", function(data) {
                 $('body').html(data);
@@ -302,6 +302,16 @@ $.ajax({
             $.get("comments.html", function(data) {
                 $('body').html(data);
             });
+        });
+    });
+</script>
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
         });
     });
 </script>

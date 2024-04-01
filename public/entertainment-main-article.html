@@ -196,8 +196,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-5'];
-        var specificIds = [1];
+        var articles = data.all_articles;
+        var specificIds = [14];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -228,8 +228,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-5'];
-        var specificIds = [2];
+        var articles = data.all_articles;
+        var specificIds = [15];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -260,7 +260,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", "#related-article-2", function(event) {
+        $(document).on("click", ".related-article-link-14", function(event) {
             event.preventDefault();
             $.get("award-winners.html", function(data) {
                 $('body').html(data);
@@ -271,7 +271,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", "#related-article-3", function(event) {
+        $(document).on("click", ".related-article-link-15", function(event) {
             event.preventDefault();
             $.get("barbie-heimer.html", function(data) {
                 $('body').html(data);
@@ -287,6 +287,16 @@ $.ajax({
             $.get("comments.html", function(data) {
                 $('body').html(data);
             });
+        });
+    });
+</script>
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
         });
     });
 </script>

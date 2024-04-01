@@ -204,8 +204,8 @@
                 url: 'data.json',
                 dataType: 'json',
                 success: function(data) {
-                    var articles = data['articles-2'];
-                    var specificIds = [1];
+                    var articles = data.all_articles;
+                    var specificIds = [6];
                     var relatedArticlesHtml = '';
             
                     var filteredArticles = articles.filter(function(article) {
@@ -235,8 +235,8 @@ $.ajax({
     url: 'data.json',
     dataType: 'json',
     success: function(data) {
-        var articles = data['articles-2'];
-        var specificIds = [2];
+        var articles = data.all_articles;
+        var specificIds = [4];
         var relatedArticlesHtml = '';
 
         var filteredArticles = articles.filter(function(article) {
@@ -267,7 +267,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".related-article-link-3", function(event) {
+        $(document).on("click", ".related-article-link-6", function(event) {
             event.preventDefault();
             $.get("trump-news1.html", function(data) {
                 $('body').html(data);
@@ -278,7 +278,7 @@ $.ajax({
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".related-article-link-1", function(event) {
+        $(document).on("click", ".related-article-link-4", function(event) {
             event.preventDefault();
             $.get("haley.html", function(data) {
                 $('body').html(data);
@@ -294,6 +294,16 @@ $.ajax({
             $.get("comments.html", function(data) {
                 $('body').html(data);
             });
+        });
+    });
+</script>
+
+<!-- Load categorizedArticles with category from tags -->
+<script>
+    $(document).ready(function() {
+        $('.tags').click(function() {
+            var category = $(this).text();
+            window.location.href = 'categorizedArticles.html?category=' + category;
         });
     });
 </script>
