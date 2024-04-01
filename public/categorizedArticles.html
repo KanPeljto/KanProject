@@ -52,10 +52,13 @@
                         var articlesHtml = '';
                         filteredArticles.forEach(function(article) {
                             articlesHtml += '<div>';
+                            articlesHtml += '<a id="'+ article.linkID +'" class="'+article.linkID+'">';
                             articlesHtml += '<h2>' + article.title + '</h2>';
                             articlesHtml += '<p>Date: ' + article.date + '</p>';
                             articlesHtml += '<img src="' + article.image + '" alt="' + article.title + '">';
                             articlesHtml += '</div>';
+                            articlesHtml += '</a>';
+
                         });
                         $('#article-container').html(articlesHtml);
                     },
@@ -134,6 +137,166 @@ $(document).ready(function(){
         });
     });
     </script>
+
+
+<!-- Making loaded articles clickable -->
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-2", function(event) {
+            event.preventDefault();
+            $.get("witnesses-page.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-3", function(event) {
+            event.preventDefault();
+            $.get("article-page.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-1", function(event) {
+            event.preventDefault();
+            $.get("2-wounded-1-in-danger.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-10", function(event) {
+            event.preventDefault();
+            $.get("fed-cuts-march.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-11", function(event) {
+            event.preventDefault();
+            $.get("fed-cares.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-7", function(event) {
+            event.preventDefault();
+            $.get("economy-main-article.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-14", function(event) {
+            event.preventDefault();
+            $.get("award-winners.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-15", function(event) {
+            event.preventDefault();
+            $.get("barbie-heimer.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(".main_article").click(function(event) {
+            event.preventDefault();
+            $.get("entertainment-main-article.html", function(data) {
+                $('body').html(data);
+                
+            });
+        });
+    });
+    </script>
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(document).on("click", ".related-article-link-5", function(event) {
+                event.preventDefault();
+                $.get("trump-biden.html", function(data) {
+                    $('body').html(data);
+                });
+            });
+        });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-4", function(event) {
+            event.preventDefault();
+            $.get("haley.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-12", function(event) {
+            event.preventDefault();
+            $.get("zoc-birthday.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".related-article-link-13", function(event) {
+            event.preventDefault();
+            $.get("milan-partizan.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(document).on("click", "#related-article-link-8", function(event) {
+            event.preventDefault();
+            $.get("sports-main-article.html", function(data) {
+                $('body').html(data);
+            });
+        });
+    });
+</script>
 
 
 
