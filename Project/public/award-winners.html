@@ -235,11 +235,12 @@
     var articleID = 9; 
 
     $.ajax({
-        url: '/backend/get_article',
+        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
         data: { articleID: articleID },
-        dataType: 'json',
+        dataType: "json",
         success: function(data) {
-            var article = data; 
+            var article = data.articles[0]; 
+
             var relatedArticlesHtml = '';
 
             relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';

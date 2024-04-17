@@ -9,7 +9,7 @@ class ArticleService{
     }
     public function get_article($articleID){
         $article = $this->article_dao->get_article($articleID);
-        return json_encode(array('articles' => array($article)));
+        return json_encode(array('articles' => $article));
     }
 }
 
