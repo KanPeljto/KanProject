@@ -23,4 +23,19 @@ class BaseDao {
             echo "Connection failed: " . $e->getMessage();
         }
     }
+
+    public function get_result($sql) {
+        try {
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
+
+
+
+
