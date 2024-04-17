@@ -13,6 +13,13 @@ class ArticleDao extends BaseDao{
         return $result;
         
     }
+
+    public function get_article_categorized($articleCategory) {
+        $sql = "SELECT * FROM articles WHERE CONCAT(',', categories, ',') LIKE '%," . $articleCategory . ",%'";
+        $result = $this->get_result($sql);
+        return $result;
+    }
+    
 }
 
 

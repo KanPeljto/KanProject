@@ -181,40 +181,36 @@
 
 <script>
     $(document).ready(function() {
-$.ajax({
-    url: 'data.json',
-    dataType: 'json',
-    success: function(data) {
-        var articles = data.all_articles;
-        var specificIds = [4];
-        var relatedArticlesHtml = '';
+    var articleID = 4; 
 
-        var filteredArticles = articles.filter(function(article) {
-            return specificIds.includes(article.id);
-        });
+    $.ajax({
+        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        data: { articleID: articleID },
+        dataType: "json",
+        success: function(data) {
+            var article = data.articles[0]; 
 
-       
-        filteredArticles.forEach(function(article) {
-            relatedArticlesHtml += '<a id="' + 'related-article-2' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
+            var relatedArticlesHtml = '';
+
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
-        });
 
-        $('#related-article-2').html(relatedArticlesHtml);
-    },
-    error: function(xhr, status, error) {
-        console.error(status, error);
-    }
-});
+            $('#related-article-2').html(relatedArticlesHtml);
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+        }
+    });
 });
 
-</script>
+    </script>
 
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".related-article-link-4", function(event) {
+        $(document).on("click", "#related-article-link-4", function(event) {
             event.preventDefault();
             $.get("haley.html", function(data) {
                 $('body').html(data);
@@ -226,39 +222,35 @@ $.ajax({
 
 <script>
     $(document).ready(function() {
-$.ajax({
-    url: 'data.json',
-    dataType: 'json',
-    success: function(data) {
-        var articles = data.all_articles;
-        var specificIds = [5];
-        var relatedArticlesHtml = '';
+    var articleID = 5; 
 
-        var filteredArticles = articles.filter(function(article) {
-            return specificIds.includes(article.id);
-        });
+    $.ajax({
+        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        data: { articleID: articleID },
+        dataType: "json",
+        success: function(data) {
+            var article = data.articles[0]; 
 
-       
-        filteredArticles.forEach(function(article) {
-            relatedArticlesHtml += '<a id="' + 'related-article-3' + '" class="'+ article.linkID +' ">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '"class="'+article.image_class+'">';
+            var relatedArticlesHtml = '';
+
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';
             relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
-        });
 
-        $('#related-article-3').html(relatedArticlesHtml);
-    },
-    error: function(xhr, status, error) {
-        console.error(status, error);
-    }
-});
+            $('#related-article-3').html(relatedArticlesHtml);
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+        }
+    });
 });
 
-</script>
+    </script>
 
 <script>
     $(document).ready(function(){
-        $(document).on("click", ".related-article-link-5", function(event) {
+        $(document).on("click", "#related-article-link-5", function(event) {
             event.preventDefault();
             $.get("trump-biden.html", function(data) {
                 $('body').html(data);

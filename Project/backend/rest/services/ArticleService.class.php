@@ -11,6 +11,11 @@ class ArticleService{
         $article = $this->article_dao->get_article($articleID);
         return json_encode(array('articles' => $article));
     }
+
+    public function get_article_categorized($articleCategory){
+        $article= $this->article_dao->get_article_categorized($articleCategory);
+        return json_encode(array('articles'=>$article));
+    }
 }
 
 

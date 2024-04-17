@@ -37,28 +37,27 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            
-            function loadArticles(category) {
+            var urlParams = new URLSearchParams(window.location.search);
+            var category = urlParams.get('category');
+    
+            if (category) {
                 $.ajax({
-                    url: 'data.json',
+                    url: 'http://localhost/KanProjectWeb/Project/backend/get_article_categorized.php',
+                    data: { articleCategory: category },
                     dataType: 'json',
                     success: function(data) {
-                        var articles = data.all_articles;
-                        var filteredArticles = articles.filter(function(article) {
-                            return article.categories.includes(category);
-                        });
                         var articlesHtml = '';
-                        filteredArticles.forEach(function(article) {
+                        data.articles.forEach(function(article) {
                             articlesHtml += '<div>';
-                            articlesHtml += '<a id="'+ article.linkID +'" class="'+article.linkID+'">';
+                            articlesHtml += '<a href="' + article.link + '">';
                             articlesHtml += '<h2>' + article.title + '</h2>';
                             articlesHtml += '<p>Date: ' + article.date + '</p>';
                             articlesHtml += '<img src="' + article.image + '" alt="' + article.title + '">';
-                            articlesHtml += '</div>';
                             articlesHtml += '</a>';
-
+                            articlesHtml += '</div>';
                         });
                         $('#article-container').html(articlesHtml);
                     },
@@ -67,17 +66,10 @@
                     }
                 });
             }
-
-            
-            var urlParams = new URLSearchParams(window.location.search);
-            var category = urlParams.get('category');
-
-            
-            if (category) {
-                loadArticles(category);
-            }
         });
     </script>
+    
+
 
 <script>
 $(document).ready(function(){
