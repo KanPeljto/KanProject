@@ -177,35 +177,59 @@
 
 <script>
     $(document).ready(function() {
-$.ajax({
-    url: 'data.json',
-    dataType: 'json',
-    success: function(data) {
-        var articles = data.all_articles;
-        var specificIds = [8,13];
-        var relatedArticlesHtml = '';
+    var articleID = 8; 
 
-        var filteredArticles = articles.filter(function(article) {
-            return specificIds.includes(article.id);
-        });
+    $.ajax({
+        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        data: { articleID: articleID },
+        dataType: "json",
+        success: function(data) {
+            var article = data.articles[0]; 
 
-       
-        filteredArticles.forEach(function(article) {
-            relatedArticlesHtml += '<a id="' + article.linkID + '" class="related-article">';
-            relatedArticlesHtml += '<img src="' + article.image +  ' "alt="' + article.title + '" height="200px" width="270px">';
-            relatedArticlesHtml += '<h4>' + article.title + '</h4>';
+            var relatedArticlesHtml = '';
+
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';
+            relatedArticlesHtml += '<h4>' + article.content + '</h4>';
             relatedArticlesHtml += '</a>';
-        });
 
-        $('#related-articles').html(relatedArticlesHtml);
-    },
-    error: function(xhr, status, error) {
-        console.error(status, error);
-    }
-});
+            $('#related-article-2').html(relatedArticlesHtml);
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+        }
+    });
 });
 
-</script>
+    </script>
+
+<script>
+    $(document).ready(function() {
+    var articleID = 13; 
+
+    $.ajax({
+        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        data: { articleID: articleID },
+        dataType: "json",
+        success: function(data) {
+            var article = data.articles[0]; 
+
+            var relatedArticlesHtml = '';
+
+            relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
+            relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';
+            relatedArticlesHtml += '<h4>' + article.content + '</h4>';
+            relatedArticlesHtml += '</a>';
+
+            $('#related-article-2').html(relatedArticlesHtml);
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+        }
+    });
+});
+
+    </script>
 
 
 <!-- SPAPP for related articles -->

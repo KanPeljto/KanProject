@@ -41,13 +41,14 @@
     <script>
         $(document).ready(function() {
             var urlParams = new URLSearchParams(window.location.search);
-            var category = urlParams.get('category');
+            var articleCategory = urlParams.get('category');
     
-            if (category) {
+            if (articleCategory) {
                 $.ajax({
                     url: 'http://localhost/KanProjectWeb/Project/backend/get_article_categorized.php',
-                    data: { articleCategory: category },
+                    data: { category: articleCategory }, 
                     dataType: 'json',
+                    method:'GET',
                     success: function(data) {
                         var articlesHtml = '';
                         data.articles.forEach(function(article) {

@@ -15,7 +15,7 @@ class ArticleDao extends BaseDao{
     }
 
     public function get_article_categorized($articleCategory) {
-        $sql = "SELECT * FROM articles WHERE CONCAT(',', categories, ',') LIKE '%," . $articleCategory . ",%'";
+        $sql = "SELECT * FROM articles WHERE FIND_IN_SET('$articleCategory', categories) > 0";
         $result = $this->get_result($sql);
         return $result;
     }
