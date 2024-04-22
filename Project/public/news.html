@@ -53,7 +53,7 @@
                     </article>
 
                     <article>
-                        <a class="article-link-2">
+                        <a class="article-link-2" data-article-id="4">
                         <h3>Haley exits race, creating a Biden-Trump rematch</h3>
                         <img src="/images/haley.jpeg">
                         <p>As his last major rival drops out, Trump becomes the presumptive Republican nominee, setting up a November showdown with Biden</p>
@@ -183,6 +183,7 @@
 
 <!-- Article SPAPP links -->
 
+
 <script>
     $(document).ready(function() {
         $(".main-article-link").click(function(event){
@@ -206,15 +207,17 @@
 </script>
 
 <script>
-    $(document).ready(function() {
-        $(".article-link-2").click(function(event){
-            event.preventDefault();
-            $.get("haley.html",function(data) {
-                $("body").html(data);
-            })
-        })
-    })
+  $(document).ready(function() {
+    $(".article-link-2").click(function(event){
+        event.preventDefault();
+        $.get("haley.html", function(data) {
+            $("body").html(data);
+        });
+    });
+});
 </script>
+
+
 
 
 <script>
