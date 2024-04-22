@@ -1,5 +1,8 @@
 <?php
 
+
+header("Access-Control-Allow-Origin: http://127.0.0.1:3000");
+
 require_once "./rest/services/ArticleService.class.php";
 
 $article_service=new ArticleService();

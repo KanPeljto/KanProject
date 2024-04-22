@@ -189,11 +189,13 @@ a:hover{
     flex-direction: column; 
     background-color: lightgray;
     outline: 1px solid gray;
-    width: 300px; 
+    width:100%;
+ 
 }
 
 .article-related-sidebar img {
     padding-top: 16px;
+   
 }
 
 .view-comments {
@@ -218,7 +220,7 @@ button:hover{
     text-decoration: none;
     color: black;
     font-family: 'Times New Roman', Times, serif;
-    display: block; /* Ensure links take full width of sidebar */
+    display: block; 
 }
 
 .article-related-sidebar a:hover {
@@ -415,4 +417,25 @@ button:hover{
     margin-top: 10px;
 }
   
+
+
+
+#related-articles{
+    display: flex;
+    flex-direction: column;
+}
+
+.article-image {
+    max-width: 100%; 
+    height: auto; 
+    max-height: 200px;
+
+}
+
+#small-image {
+    max-width: 100%; 
+    height: auto; 
+}
+
+
 

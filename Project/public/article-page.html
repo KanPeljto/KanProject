@@ -74,31 +74,35 @@
 
     <script>
         $(document).ready(function() {
-        var articleID = [1,2]; 
-    
-        $.ajax({
-            url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
-            data: { articleID: articleID },
-            dataType: "json",
-            success: function(data) {
-                var article = data.articles[0,1]; 
-    
-                var relatedArticlesHtml = '';
-    
-                relatedArticlesHtml += '<a id="' + article.linkID + '" class="'+ article.linkClass +' ">';
-                relatedArticlesHtml += '<img src="' + article.image +  '" alt="' + article.title + '" class="' + article.image_class + '">';
-                relatedArticlesHtml += '<h4>' + article.content + '</h4>';
-                relatedArticlesHtml += '</a>';
-    
-                $('#related-articles').html(relatedArticlesHtml);
-            },
-            error: function(xhr, status, error) {
-                console.error(status, error);
-            }
+            var articleIDs = [1, 2];
+
+            articleIDs.forEach(function(articleID) {
+                $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+                    data: { articleID: articleID },
+                    dataType: 'json',
+                    success: function(data) {
+                        var article = data.articles[0];
+                        var articleHtml = '';
+
+                        articleHtml += '<div class="related-article">';
+                        articleHtml += '<a id="'+article.linkID + '" + href="' + article.link + '">';
+                        articleHtml += '<img src="' + article.image + '" alt="' + article.title + '" class="article-image">';
+                        articleHtml += '<h4>' + article.title + '</h4>';
+                        articleHtml += '</a>';
+                        articleHtml += '</div>';
+
+                        $('#related-articles').append(articleHtml);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error);
+                    }
+                });
+            });
         });
-    });
-    
-        </script>
+    </script>
+
+        
 
 
 <!-- SPAPP for navbar -->
