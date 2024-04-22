@@ -262,6 +262,18 @@
     $(document).ready(function(){
         $(document).on("click", ".related-article-link-6", function(event) {
             event.preventDefault();
+            var articleId = 6;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("trump-news1.html", function(data) {
                 $('body').html(data);
             });
@@ -273,6 +285,18 @@
     $(document).ready(function(){
         $(document).on("click", ".related-article-link-4", function(event) {
             event.preventDefault();
+            var articleId = 4;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("haley.html", function(data) {
                 $('body').html(data);
             });

@@ -254,6 +254,18 @@
     $(document).ready(function(){
         $(document).on("click", "#related-article-link-14", function(event) {
             event.preventDefault();
+            var articleId = 14;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("award-winners.html", function(data) {
                 $('body').html(data);
             });
@@ -265,6 +277,18 @@
     $(document).ready(function(){
         $(document).on("click", "#related-article-link-15", function(event) {
             event.preventDefault();
+            var articleId = 15;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("barbie-heimer.html", function(data) {
                 $('body').html(data);
             });

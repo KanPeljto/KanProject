@@ -173,6 +173,18 @@
     $(document).ready(function(){
         $(document).on("click", "#related-article-link-1", function(event) {
             event.preventDefault();
+            var articleId = 1;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("article-page.html", function(data) {
                 $('body').html(data);
             });
@@ -184,6 +196,18 @@
     $(document).ready(function(){
         $(document).on("click", "#related-article-link-2", function(event) {
             event.preventDefault();
+            var articleId = 2;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("2-wounded-1-in-danger.html", function(data) {
                 $('body').html(data);
             });

@@ -1,6 +1,6 @@
 <?php
 
-require_once './rest/services/ViewsService.class.php';
+require_once "./../backend/rest/services/ViewsService.class.php";
 
 $articleID=$_POST["article_id"];
 

@@ -163,6 +163,18 @@ $(document).ready(function(){
     $(document).ready(function(){
         $(".main_article").click(function(event) {
             event.preventDefault();
+            var articleId = 8;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("sports-main-article.html", function(data) {
                 $('body').html(data);
                 
@@ -175,6 +187,18 @@ $(document).ready(function(){
     $(document).ready(function(){
         $("#secondary_article_1").click(function(event) {
             event.preventDefault();
+            var articleId = 12;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("zoc-birthday.html", function(data) {
                 $('body').html(data);
                 
@@ -187,6 +211,18 @@ $(document).ready(function(){
     $(document).ready(function(){
         $("#secondary_article_2").click(function(event) {
             event.preventDefault();
+            var articleId = 13;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("milan-partizan.html", function(data) {
                 $('body').html(data);
                 

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "./BaseDAO.class.php";
+require_once "BaseDAO.class.php";
 
 class ViewsDao extends BaseDao{
 

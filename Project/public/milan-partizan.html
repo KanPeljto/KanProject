@@ -272,6 +272,18 @@ $.ajax({
     $(document).ready(function(){
         $(document).on("click", ".related-article-link-8", function(event) {
             event.preventDefault();
+            var articleId = 8;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("sports-main-article.html", function(data) {
                 $('body').html(data);
             });
@@ -283,6 +295,18 @@ $.ajax({
     $(document).ready(function(){
         $(document).on("click", ".related-article-link-12", function(event) {
             event.preventDefault();
+            var articleId = 12;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("zoc-birthday.html", function(data) {
                 $('body').html(data);
             });

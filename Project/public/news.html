@@ -188,6 +188,18 @@
     $(document).ready(function() {
         $(".main-article-link").click(function(event){
             event.preventDefault();
+            var articleId = 1;
+            $.ajax({
+                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    method: 'POST',
+                    data: { article_id: articleId },
+                    success: function(response) {
+                        console.log(response); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status, error); 
+                    }
+                });
             $.get("article-page.html",function(data) {
                 $("body").html(data);
             })
