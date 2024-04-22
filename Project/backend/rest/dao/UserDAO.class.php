@@ -8,7 +8,7 @@ class UserDAO extends BaseDao{
     }
 
     public function create_user($email,$username,$password){
-        $sql="INSERT INTO users (email,username,password,created_at) VALUES (?,?,?,NOW())";
+        $sql="INSERT INTO users (username,email,password,created_at) VALUES (?,?,?,NOW())";
         try{
             $stmt=$this->connection->prepare($sql);
 
@@ -21,6 +21,22 @@ class UserDAO extends BaseDao{
             return $result;
         } catch(PDOException $e){
             echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function find_user($email){
+        $sql="SELECT * FROM users WHERE email LIKE ?";
+
+        try{
+
+            $stmt=$this->connection->prepare($sql);
+            $stmt->bindParam(1,$email);
+            
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            echo "Error " . $e->getMessage();
             return false;
         }
     }

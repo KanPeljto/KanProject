@@ -14,4 +14,19 @@ class UserService{
         return $this->user_dao->create_user($username,$email,$hashed_pass);
     }
 
+    public function login_user($email,$password){
+        $user=$this->user_dao->find_user($email);
+
+        if($user && password_verify($password,$user['password'])){
+
+            return $user;
+
+
+        } 
+        else
+        {
+            return false;
+        }
+    }
+
 }
