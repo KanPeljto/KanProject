@@ -11,6 +11,6 @@ class CommentsService{
 
     public function get_comments($articleID){
         $comment= $this->comment_dao->get_comments($articleID);
-        return json_encode(array('comments'->$comment));
+        return json_encode(array('comments'=>$comment));
     }
 }

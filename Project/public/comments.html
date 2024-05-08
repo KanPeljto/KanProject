@@ -21,24 +21,36 @@
             </nav>
 
     <div id="comment-section">
-        <div class="comment">
-          <div class="username">Username 1</div>
-          <div class="comment-text">Comment text</div>
-          
-        </div>
-        <div class="comment">
-          <div class="username">Username 2</div>
-          <div class="comment-text"></div>
-        </div>
-        <div class="comment">
-          <div class="username">Username 3</div>
-          <div class="comment-text"></div>
-         
-        </div>
-        <div class="comment">
-          <div class="username">Username 4</div>
-          <div class="comment-text"></div>
-          
+        <div id="comment-container">
+            <script>
+                $(document).ready(function() {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var articleID = urlParams.get('articleID');
+            
+                    if (articleID) {
+                        $.ajax({
+                            url: 'http://localhost/KanProjectWeb/Project/backend/get_comments.php',
+                            data: { articleID: articleID }, 
+                            dataType: 'json',
+                            method: 'GET',
+                            success: function(data) {
+                                var commentsHtml = '';
+                                data.comments.forEach(function(comment) {
+                                    commentsHtml += '<div>';
+                                    commentsHtml += '<p>' + comment.comment + '</p>';
+                                    commentsHtml += '<p>User: ' + comment.user_name + '</p>';
+                                    commentsHtml += '<p>Date: ' + comment.created_at + '</p>';
+                                    commentsHtml += '</div>';
+                                });
+                                $('#comment-container').html(commentsHtml);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error(status, error);
+                            }
+                        });
+                    }
+                });
+            </script>
         </div>
       </div>
 
@@ -102,5 +114,7 @@
             });
             </script>
 
+
+            
 </body>
 </html>
