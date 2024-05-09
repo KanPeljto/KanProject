@@ -347,6 +347,16 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function() {
+        $('.view-comments').click(function(e) {
+            e.preventDefault();
+            var articleID = 11;
+            window.location.href = 'comments.html?articleID=' + articleID;
+        });
+    });
+</script>
 </body>
 </html>
 
