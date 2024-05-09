@@ -1,4 +1,6 @@
 <?php
+use Firebase\JWT\JWT;
+
 
 require_once __DIR__ . '/../dao/UserDAO.class.php';
 
@@ -19,7 +21,25 @@ class UserService{
 
         if($user && password_verify($password,$user['password'])){
 
-            return $user;
+            $secret_key="UsirqZajXOvEZMy0wYf4yffugnjVS7IB9IgA9e8/qVg=";
+            $issuer_claim="localhost";
+            $issued_at_claim=time();
+            $expire_claim=$issued_at_claim + 3600;
+
+            $token= array(
+                "iss" => $issuer_claim,
+                "iat" => $issued_at_claim,
+                "exp" => $expire_claim,
+                "data" => array(
+                    "user_id"=>$user['id'],
+                    "username"=>$user['username']
+                )
+            );
+
+            $jwt= JWT::encode($token,$secret_key);
+            return $jwt;
+
+
 
 
         } 
