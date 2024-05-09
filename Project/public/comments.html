@@ -36,9 +36,9 @@
                             success: function(data) {
                                 var commentsHtml = '';
                                 data.comments.forEach(function(comment) {
-                                    commentsHtml += '<div>';
-                                    commentsHtml += '<p>' + comment.comment + '</p>';
+                                    commentsHtml += '<div id="comment" style="margin:50px;outline: solid 2px black; ">';
                                     commentsHtml += '<p>User: ' + comment.user_name + '</p>';
+                                    commentsHtml += '<p style="margin: 10px;">' + comment.comment + '</p>';
                                     commentsHtml += '<p>Date: ' + comment.created_at + '</p>';
                                     commentsHtml += '</div>';
                                 });
