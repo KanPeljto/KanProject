@@ -1,6 +1,8 @@
 <?php
 use Firebase\JWT\JWT;
 
+require __DIR__ . '/../../../vendor/autoload.php';
+
 
 require_once __DIR__ . '/../dao/UserDAO.class.php';
 
@@ -19,7 +21,11 @@ class UserService{
     public function login_user($email,$password){
         $user=$this->user_dao->find_user($email);
 
+        
+
         if($user && password_verify($password,$user['password'])){
+
+            
 
             $secret_key="UsirqZajXOvEZMy0wYf4yffugnjVS7IB9IgA9e8/qVg=";
             $issuer_claim="localhost";
@@ -36,8 +42,11 @@ class UserService{
                 )
             );
 
-            $jwt= JWT::encode($token,$secret_key);
-            return $jwt;
+            $jwt= JWT::encode($token,$secret_key,'HS256');
+            return array(
+                "jwt"=>$jwt,
+                "user"=>$user
+            );
 
 
 

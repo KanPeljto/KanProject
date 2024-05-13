@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(isset($_COOKIE['jwt'])){
+    $loggedIn=true;
+} else{
+    $loggedIn=false;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +31,13 @@
             <a id="economy-link">Economy</a> |
             <a id="sports-link">Sports</a> |
             <a id="entertainment-link">Entertainment</a> |
-            <span class="login_tab " id="login-link">Sign Up / Login</span>
-            <span class="welcome-message" style="display:none;"></span> 
+            <!-- <span class="login_tab " id="login-link">Sign Up / Login</span>
+            <span class="welcome-message" style="display:none;"></span>  -->
+            <?php if ($loggedIn): ?>
+                <a href="">Logout</a>
+            <?php else: ?>
+                <a href="login.php">Sign Up / Login</a>
+            <?php endif; ?>
             
         </div>
     </nav>
