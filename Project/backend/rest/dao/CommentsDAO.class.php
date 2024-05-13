@@ -13,12 +13,15 @@ class CommentsDao extends BaseDao{
         return $result;
     }
 
-    public function add_comment($data){
-        $sql = "INSERT INTO comments(article_id, comment, user_name) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("iss", $data['article_id'], $data['comment'], $data['username']);
+    public function add_comment($articleID, $comment, $username) {
+        $sql = "INSERT INTO comments (article_id, comment, user_name) VALUES (:articleID, :comment, :username)";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':articleID', $articleID);
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':username', $username);
         $stmt->execute();
-        $result = $stmt->get_result();
-        return $result;
+        
     }
+    
+    
 }

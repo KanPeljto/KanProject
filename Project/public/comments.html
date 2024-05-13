@@ -56,8 +56,8 @@
         <div id="comment-form">
             <form id="add-comment-form" action="http://localhost/KanProjectWeb/Project/backend/add_comment.php" method="POST">
                 <label for="comment">Comment:</label><br>
-                <textarea id="comment-text" name="comment" rows="4" cols="50"></textarea><br>
-                <input type="submit" value="Submit">
+                <textarea id="comment-text" name="comment-text" rows="4" cols="50"></textarea><br>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </div>
         
@@ -142,16 +142,12 @@
                     console.error(status, error);
                 }
             });
+            console.log("comment: " + comment);
         });
 </script>
 
 <script src="../js/loginLogout.js"></script>
 
-<script>
-    $(document).ready(() => {
-        
-    })
-</script>
 
 
             

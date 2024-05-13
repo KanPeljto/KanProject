@@ -18,25 +18,13 @@ class CommentsService{
         return json_encode(array('comments'=>$comment));
     }
 
-    public function add_comment($articleID,$comment){
-        $jwt = isset($_COOKIE["jwt"]) ? $_COOKIE["jwt"] : '';
-    
-        if ($jwt) {
-            $decoded = JWT::decode($jwt, new Key("UsirqZajXOvEZMy0wYf4yffugnjVS7IB9IgA9e8/qVg=", 'HS256'));
-            $username = $decoded->data->username;
-        } else {
-            throw new Exception("JWT not found");
+    public function add_comment($articleID, $comment, $username) {
+        try {
+            $this->comment_dao->add_comment($articleID, $comment, $username);
+            return true;
+        } catch (Exception $e) {
+            return false;
         }
-    
-        $data = array(
-            'article_id' => $articleID,
-            'comment' => $comment,
-            'username' => $username
-        );
-    
-        $added_comment = $this->comment_dao->add_comment($data);
-    
-        return json_encode(array('comments'=>$comment));
     }
     
 }

@@ -7,8 +7,9 @@ use Firebase\JWT\Key;
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $comment=$_POST["comment"];
-    ;
+    $comment_text=$_POST["comment"];
+    $articleID=$_POST["articleID"];
+    
 
     if(isset($_COOKIE["jwt"])){
         $jwt=$_COOKIE["jwt"];
@@ -21,15 +22,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $comments_service=new CommentsService();
 
-    try{
-        $result=$comments_service->add_comment($articleID,$comment,$username);
-
-        echo json_encode(array("success" => true, "message" => "Comment added successfully"));
-
-    }catch (Exception $e) {
-            echo json_encode(array("success" => false, "message" => $e->getMessage()));
-        }
-
+    try {
+        $result = $comments_service->add_comment($articleID, $comment_text, $username);
+        echo json_encode(array("success" => true));
+    } catch (Exception $e) {
+        echo json_encode(array("success" => false, "message" => $e->getMessage()));
+    }
+    
 
     
 }

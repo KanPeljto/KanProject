@@ -16,7 +16,7 @@ try {
         $jwt=$user["jwt"];
         $username=$user["username"];
         setcookie("jwt",$jwt,time() + (86400),"/");
-
+        
         
         header("Location: http://localhost/KanProjectWeb/Project/public/index.php");
         exit();
