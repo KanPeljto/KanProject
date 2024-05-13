@@ -12,4 +12,10 @@ class CommentsDao extends BaseDao{
         $result=$this->get_result($sql);
         return $result;
     }
+
+    public function add_comment($comment,$articleID,$username){
+        $sql="INSERT INTO comments(article_id,comment,user_name) VALUES ($articleID,$comment,$username)";
+        $result=$this->get_result($sql);
+        return $result;
+        }
 }

@@ -13,4 +13,10 @@ class CommentsService{
         $comment= $this->comment_dao->get_comments($articleID);
         return json_encode(array('comments'=>$comment));
     }
+
+    public function add_comment($articleID,$comment,$username){
+        $added_comment= $this->comment_dao->add_comment($comment,$articleID,$username);
+        return json_encode(array('comments'=>$comment));
+    }
+    
 }

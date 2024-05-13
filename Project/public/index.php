@@ -1,12 +1,4 @@
-<?php
-session_start();
 
-if(isset($_COOKIE['jwt'])){
-    $loggedIn=true;
-} else{
-    $loggedIn=false;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +25,8 @@ if(isset($_COOKIE['jwt'])){
             <a id="entertainment-link">Entertainment</a> |
             <!-- <span class="login_tab " id="login-link">Sign Up / Login</span>
             <span class="welcome-message" style="display:none;"></span>  -->
-            <?php if ($loggedIn): ?>
-                <a href="">Logout</a>
-            <?php else: ?>
-                <a href="login.php">Sign Up / Login</a>
-            <?php endif; ?>
+            <a id="loginLogout" href=""> </a>
+            
             
         </div>
     </nav>
@@ -188,17 +177,9 @@ $(document).ready(function(){
     </script>
 
 
-<script>
-    $(document).ready(function() {
-        const jwtToken= getCookie('jwt');
 
-        if(jwtToken){
-            $('#login-link').hide();
-        } else{
-            $('#login-link').show();
-        }
-    })
-</script>
+
+<script src="../js/loginLogout.js"></script>
 
 
 </body>
