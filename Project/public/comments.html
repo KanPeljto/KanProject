@@ -52,7 +52,15 @@
                 });
             </script>
         </div>
-      </div>
+
+        <div id="comment-form">
+            <form id="add-comment-form" action="http://localhost/KanProjectWeb/Project/backend/add_comment.php" method="POST">
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment-text" name="comment" rows="4" cols="50"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
 
 
       <script>
@@ -114,9 +122,36 @@
             });
             </script>
 
+<script>
+    $("#add-comment-form").submit(function(event) {
+            event.preventDefault();
+            var comment = $("#comment-text").val();
+            var urlParams = new URLSearchParams(window.location.search);
+            var articleID = urlParams.get('articleID');
 
+            $.ajax({
+                url: 'http://localhost/KanProjectWeb/Project/backend/add_comment.php',
+                type: 'POST',
+                data: { comment: comment, articleID: articleID },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    refreshComments();
+                },
+                error: function(xhr, status, error) {
+                    console.error(status, error);
+                }
+            });
+        });
+</script>
 
 <script src="../js/loginLogout.js"></script>
+
+<script>
+    $(document).ready(() => {
+        
+    })
+</script>
 
 
             

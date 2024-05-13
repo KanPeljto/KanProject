@@ -14,6 +14,7 @@ try {
     $user = $user_service->login_user($email, $password);
     if ($user) {
         $jwt=$user["jwt"];
+        $username=$user["username"];
         setcookie("jwt",$jwt,time() + (86400),"/");
 
         
