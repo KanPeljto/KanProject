@@ -19,7 +19,7 @@
                 <a id="economy-link">Economy</a> |
                 <a id="sports-link">Sports</a> |
                 <a id="entertainment-link">Entertainment</a> |
-                <a class="login_tab " id="login-link">Sign Up / Login</a> 
+                <a id="loginLogout" href=""> </a>
             </div>
         </nav>
 
@@ -214,7 +214,19 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function() {
+        $('.view-comments').click(function(e) {
+            e.preventDefault();
+            var articleID = 3;
+            window.location.href = 'comments.html?articleID=' + articleID;
+        });
+    });
+</script>
                 
+
+<script src="../js/loginLogout.js"></script>
     
 </body>
 </html>

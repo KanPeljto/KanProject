@@ -16,31 +16,51 @@
                 <a id="economy-link">Economy</a> |
                 <a id="sports-link">Sports</a> |
                 <a id="entertainment-link">Entertainment</a> |
-                <a class="login_tab" id="login-link">Sign Up / Login</a>
+                <a id="loginLogout" href=""> </a>
               </div>
             </nav>
 
     <div id="comment-section">
-        <div class="comment">
-          <div class="username">Username 1</div>
-          <div class="comment-text">Comment text</div>
-          
+        <div id="comment-container">
+            <script>
+                $(document).ready(function() {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var articleID = urlParams.get('articleID');
+            
+                    if (articleID) {
+                        $.ajax({
+                            url: 'http://localhost/KanProjectWeb/Project/backend/get_comments.php',
+                            data: { articleID: articleID }, 
+                            dataType: 'json',
+                            method: 'GET',
+                            success: function(data) {
+                                var commentsHtml = '';
+                                data.comments.forEach(function(comment) {
+                                    commentsHtml += '<div id="comment" style="margin:50px;outline: solid 2px black; ">';
+                                    commentsHtml += '<p>User: ' + comment.user_name + '</p>';
+                                    commentsHtml += '<p style="margin: 10px;">' + comment.comment + '</p>';
+                                    commentsHtml += '<p>Date: ' + comment.created_at + '</p>';
+                                    commentsHtml += '</div>';
+                                });
+                                $('#comment-container').html(commentsHtml);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error(status, error);
+                            }
+                        });
+                    }
+                });
+            </script>
         </div>
-        <div class="comment">
-          <div class="username">Username 2</div>
-          <div class="comment-text"></div>
+
+        <div id="comment-form">
+            <form id="add-comment-form" action="http://localhost/KanProjectWeb/Project/backend/add_comment.php" method="POST">
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment-text" name="comment-text" rows="4" cols="50"></textarea><br>
+                <button type="submit" class="btn">Submit</button>
+            </form>
         </div>
-        <div class="comment">
-          <div class="username">Username 3</div>
-          <div class="comment-text"></div>
-         
-        </div>
-        <div class="comment">
-          <div class="username">Username 4</div>
-          <div class="comment-text"></div>
-          
-        </div>
-      </div>
+        
 
 
       <script>
@@ -102,5 +122,34 @@
             });
             </script>
 
+<script>
+    $("#add-comment-form").submit(function(event) {
+            event.preventDefault();
+            var comment = $("#comment-text").val();
+            var urlParams = new URLSearchParams(window.location.search);
+            var articleID = urlParams.get('articleID');
+
+            $.ajax({
+                url: 'http://localhost/KanProjectWeb/Project/backend/add_comment.php',
+                type: 'POST',
+                data: { comment: comment, articleID: articleID },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    refreshComments();
+                },
+                error: function(xhr, status, error) {
+                    console.error(status, error);
+                }
+            });
+            console.log("comment: " + comment);
+        });
+</script>
+
+<script src="../js/loginLogout.js"></script>
+
+
+
+            
 </body>
 </html>

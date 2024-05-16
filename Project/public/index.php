@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +23,10 @@
             <a id="economy-link">Economy</a> |
             <a id="sports-link">Sports</a> |
             <a id="entertainment-link">Entertainment</a> |
-            <span class="login_tab " id="login-link">Sign Up / Login</span>
-            <span class="welcome-message" style="display:none;"></span> 
+            <!-- <span class="login_tab " id="login-link">Sign Up / Login</span>
+            <span class="welcome-message" style="display:none;"></span>  -->
+            <a id="loginLogout" href=""> </a>
+            
             
         </div>
     </nav>
@@ -173,17 +177,9 @@ $(document).ready(function(){
     </script>
 
 
-<script>
-    $(document).ready(function() {
-        const jwtToken= getCookie('jwt');
 
-        if(jwtToken){
-            $('#login-link').hide();
-        } else{
-            $('#login-link').show();
-        }
-    })
-</script>
+
+<script src="../js/loginLogout.js"></script>
 
 
 </body>
