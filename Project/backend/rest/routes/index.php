@@ -7,6 +7,7 @@ require __DIR__ . "/../../../vendor/autoload.php";
 require_once __DIR__ . "/../../login.php";
 require_once __DIR__ . "/../../add_comment_function.php";
 require_once __DIR__ . "/../../checkJWT.php";
+require_once __DIR__ . "/../../register.php";
 
 $auth=new Authorization();
 
@@ -45,6 +46,17 @@ Flight::route('POST /add_comment', function() {
     $response = addComment($comment_text, $articleID, $jwt);
     Flight::json($response);
 })->addMiddleware($auth);
+
+Flight::route('POST /register',function() {
+    $data=Flight::request()->data;
+
+    $username=$data->username;
+    $email=$data->email;
+    $password=$data->password;
+
+    registerUser($email,$username,$password);
+
+});
 
 
 Flight::start();

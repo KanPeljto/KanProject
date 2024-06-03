@@ -2,30 +2,20 @@
 
 require_once __DIR__ . "/../backend/rest/services/UserService.class.php";
 
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    header("Location: /KanProjectWeb/Project/public/register.html");
-        exit;
-    }
+function registerUser($email,$username,$password){
 
 $user_service= new UserService();
 
 
-$email=$_POST['email'];
-$username=$_POST['username'];
-$password=$_POST['password'];
-$repeated_password = $_POST['password'];
+// $email=$_POST['email'];
+// $username=$_POST['username'];
+// $password=$_POST['password'];
+// $repeated_password = $_POST['password'];
 
 
-if($password !== $repeated_password){
-    echo json_encode(array(
-        "message"=> "Passwords do not match"
-    ));
-    echo json_encode(array(
-        "password"=>$password,
-        "repeated_pass"=>$repeated_password
-    ));
-    exit;
-}
+
+
+
 
 echo json_encode(array(
     "email"=>$email,
@@ -54,4 +44,5 @@ if ($jwt_token){
     echo json_encode(array(
         "message"=>"Registration failed"
     ));
+}
 }
