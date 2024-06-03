@@ -274,7 +274,7 @@ $.ajax({
             event.preventDefault();
             var articleId = 8;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -297,7 +297,7 @@ $.ajax({
             event.preventDefault();
             var articleId = 12;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

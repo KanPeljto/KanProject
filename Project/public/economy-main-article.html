@@ -207,7 +207,7 @@ Tuesday’s selloff comes after the Dow on Monday notched a record-high close. T
     var articleID = 10; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/rest/routes/getarticle',
+        url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -236,7 +236,7 @@ Tuesday’s selloff comes after the Dow on Monday notched a record-high close. T
     var articleID = 11; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/get_article.php',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -268,7 +268,7 @@ Tuesday’s selloff comes after the Dow on Monday notched a record-high close. T
             event.preventDefault();
             var articleId = 10;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -291,7 +291,7 @@ Tuesday’s selloff comes after the Dow on Monday notched a record-high close. T
             event.preventDefault();
             var articleId = 11;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

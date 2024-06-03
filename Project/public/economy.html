@@ -162,7 +162,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 7;
             $.ajax({
-                url: 'http://localhost/KanProjectWeb/Project/backend/rest/routes/getarticle',
+                url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -186,7 +186,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 10;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -210,7 +210,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 11;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

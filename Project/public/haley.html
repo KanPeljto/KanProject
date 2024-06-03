@@ -244,7 +244,7 @@
     var articleID = 6; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/rest/routes/getarticle',
+        url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -273,7 +273,7 @@
     var articleID = 5; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/get_article.php',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -304,7 +304,7 @@
             event.preventDefault();
             var articleId = 6;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -327,7 +327,7 @@
             event.preventDefault();
             var articleId = 5;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

@@ -78,7 +78,7 @@
 
             articleIDs.forEach(function(articleID) {
                 $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/rest/routes/getarticle',
+                    url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
                     data: { articleID: articleID },
                     dataType: 'json',
                     success: function(data) {
