@@ -8,6 +8,7 @@ require_once __DIR__ . "/../../login.php";
 require_once __DIR__ . "/../../add_comment_function.php";
 require_once __DIR__ . "/../../checkJWT.php";
 
+$auth=new Authorization();
 
 Flight::route("POST /user/login", function(){
     $raw_data = Flight::request()->getBody();
@@ -43,7 +44,7 @@ Flight::route('POST /add_comment', function() {
 
     $response = addComment($comment_text, $articleID, $jwt);
     Flight::json($response);
-})->addMiddleware(checkJwt());
+})->addMiddleware($auth);
 
 
 Flight::start();
