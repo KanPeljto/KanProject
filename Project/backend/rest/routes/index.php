@@ -8,6 +8,7 @@ require_once __DIR__ . "/../../login.php";
 require_once __DIR__ . "/../../add_comment_function.php";
 require_once __DIR__ . "/../../checkJWT.php";
 require_once __DIR__ . "/../../register.php";
+require_once __DIR__ . "/../../get_comments.php";
 
 $auth=new Authorization();
 
@@ -56,6 +57,10 @@ Flight::route('POST /register',function() {
 
     registerUser($email,$username,$password);
 
+});
+
+Flight::route('GET /getcomments', function() {
+    load_comments();
 });
 
 
