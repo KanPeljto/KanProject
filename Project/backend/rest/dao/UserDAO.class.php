@@ -26,12 +26,12 @@ class UserDAO extends BaseDao{
     }
 
     public function find_user($email){
-        $sql="SELECT * FROM users WHERE email LIKE ?";
+        $sql="SELECT * FROM users WHERE email LIKE :email";
 
         try{
 
             $stmt=$this->connection->prepare($sql);
-            $stmt->bindParam(1,$email);
+            $stmt->bindParam(':email',$email);
             
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);

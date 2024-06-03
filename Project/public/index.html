@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanco</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./../styles.css">
 </head>
 <body>
     <header>
@@ -173,9 +173,9 @@ $(document).ready(function(){
     </script>
 
 
-<script>
+<!-- <script>
     $(document).ready(function() {
-        const jwtToken= getCookie('jwt');
+        const jwtToken= $.cookie("jwt");
 
         if(jwtToken){
             $('#login-link').hide();
@@ -183,7 +183,7 @@ $(document).ready(function(){
             $('#login-link').show();
         }
     })
-</script>
+</script> -->
 
 
 </body>
