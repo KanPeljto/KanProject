@@ -235,7 +235,7 @@
     var articleID = 9; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: 'http://localhost/KanProjectWeb/Project/backend/rest/routes/getarticle',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
