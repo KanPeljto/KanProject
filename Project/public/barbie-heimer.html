@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscars 2024: ‘Barbie’ might be the belle of the ball, but it looks like ‘Oppenheimer’s’ night</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="./../styles.css">
 </head>
 <body>
     
@@ -200,7 +200,7 @@
     var articleID = 14; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -228,7 +228,7 @@
     var articleID = 9; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/get_article.php',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -260,7 +260,7 @@
             event.preventDefault();
             var articleId = 9;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

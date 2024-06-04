@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="./../styles.css">
     <title>Categorized Articles</title>
 </head>
 <body>
@@ -45,7 +45,7 @@
     
             if (articleCategory) {
                 $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/get_article_categorized.php',
+                    url: '/KanProjectWeb/Project/backend/rest/routes/getcategorized',
                     data: { category: articleCategory }, 
                     dataType: 'json',
                     method:'GET',
@@ -140,7 +140,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 2;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -163,7 +163,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 3;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -187,7 +187,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 1;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -210,7 +210,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 10;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -233,7 +233,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 11;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -256,7 +256,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 7;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -279,7 +279,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 14;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -302,7 +302,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 15;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -325,7 +325,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 9;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -349,7 +349,7 @@ $(document).ready(function(){
                 event.preventDefault();
                 var articleId = 5;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -372,7 +372,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 4;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -395,7 +395,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 12;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -418,7 +418,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 13;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -441,7 +441,7 @@ $(document).ready(function(){
             event.preventDefault();
             var articleId = 8;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy brithday,maestro! Euroleague and Partizan celebrate Zeljko Obradovic's birthday</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="./../styles.css">
 </head>
 <body>
     
@@ -180,7 +180,7 @@
     var articleID = 8; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -208,7 +208,7 @@
     var articleID = 13; 
 
     $.ajax({
-        url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+        url: '/KanProjectWeb/Project/backend/get_article.php',
         data: { articleID: articleID },
         dataType: "json",
         success: function(data) {
@@ -240,7 +240,7 @@
             event.preventDefault();
             var articleId = 8;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {
@@ -263,7 +263,7 @@
             event.preventDefault();
             var articleId = 13;
             $.ajax({
-                    url: 'http://localhost/KanProjectWeb/Project/backend/countClick.php',
+                    url: '/KanProjectWeb/Project/backend/countClick.php',
                     method: 'POST',
                     data: { article_id: articleId },
                     success: function(response) {

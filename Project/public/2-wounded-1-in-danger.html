@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two injured, one in gravely danger</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="./../styles.css">
 </head>
 <body>
     
@@ -88,7 +88,7 @@
         
                     articleIDs.forEach(function(articleID) {
                         $.ajax({
-                            url: 'http://localhost/KanProjectWeb/Project/backend/get_article.php',
+                            url: '/KanProjectWeb/Project/backend/rest/routes/getarticle',
                             data: { articleID: articleID },
                             dataType: 'json',
                             success: function(data) {
